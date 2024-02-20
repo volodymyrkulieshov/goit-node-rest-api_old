@@ -13,12 +13,12 @@ export const createContactSchema = Joi.object({
   });
   
   export const updateContactSchema = Joi.object({
-    name: Joi.string().required(),
+    name: Joi.string(),
     email: Joi.string().email({
       minDomainSegments: 2,
       tlds: { allow: ["com","ua", "net" ] },
-    }).required(),
+    }),
   
-    phone: Joi.string().required(),
+    phone: Joi.string(),
   });
 
